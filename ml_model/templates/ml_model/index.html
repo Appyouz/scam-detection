@@ -15,12 +15,29 @@
     <!---->
     <h1>Catch the Phish! 🎣</h1>
     <p>Is that email a little... *phishy*? Paste the content below and let's find out! </p>
-    <form method="POST">
+    <form id="phishing-form" method="POST">
       {% csrf_token %}
-      <textarea id="email-text" name="email-text" rows="1" cols="50"></textarea>
+      <textarea id="email-text" name="email-text" rows="1" cols="50" placeholder="Paste the email content here..."></textarea>
       <button type="submit">Analyze</button>
       </from>
   </div>
+
+    <script>
+      // Get textArea element by ID
+      const textarea = document.getElementById('email-text')
+      const form = document.getElementById('phishing-form')
+      
+      // Add a keydown listener to the textarea
+      textarea.addEventListener('keydown', (event) => {
+        // Check if the key pressed is 'Enter' and not 'Shift + Enter'
+        if(event.key === 'Enter' && !event.shiftKey){
+          event.preventDefault();
+
+          // Submit the form
+          form.submit();
+        }
+      });
+    </script>
 </body>
 
 </html>
