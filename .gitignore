@@ -1,0 +1,31 @@
+# Caches and temporary files
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+env/
+venv/
+*env/
+
+# Django-specific files
+*.log
+*.pot
+*.db
+*.sqlite3
+
+# Media and static files
+media/
+static_cdn/
+
+# IDE and operating system files
+.DS_Store
+.idea/
+.vscode/
+
+# Environment variables
+.env
+local_settings.py
+
+# Sensitive data
+secrets.json
