@@ -17,7 +17,7 @@
     <p>Is that email a little... *phishy*? Paste the content below and let's find out! </p>
     <form method="POST">
       {% csrf_token %}
-      <textarea id="text-input" name="text-input" rows="1" cols="50"></textarea>
+      <textarea id="email-text" name="email-text" rows="1" cols="50"></textarea>
       <button type="submit">Analyze</button>
       </from>
   </div>
