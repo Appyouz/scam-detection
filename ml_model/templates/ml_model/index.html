@@ -1,14 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>Scam Detector</title>
+  <link rel="stylesheet" href="{% static 'ml_model/style.css' %}">
 </head>
 
 <body>
-  <h1>Welcome to the Django Scam Detector</h1>
-  <p>This is the main page for our application.</p>
+  <div class="container">
+    <!-- <h1>Catch The Phish</h1><br> -->
+    <!-- <p>Enter email content below to check if it's a scam</p> -->
+    <!---->
+    <h1>Catch the Phish! 🎣</h1>
+    <p>Is that email a little... *phishy*? Paste the content below and let's find out! </p>
+    <form method="POST">
+      {% csrf_token %}
+      <textarea id="text-input" name="text-input" rows="1" cols="50"></textarea>
+      <button type="submit">Analyze</button>
+      </from>
+  </div>
 </body>
 
 </html>
