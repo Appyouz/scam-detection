@@ -19,8 +19,16 @@
       {% csrf_token %}
       <textarea id="email-text" name="email-text" rows="1" cols="50" placeholder="Paste the email content here..."></textarea>
       <button type="submit">Analyze</button>
-      </from>
+      </form>
   </div>
+
+
+  <div class="container hidden result-container">
+      <h1>Result</h1>
+  </div>
+
+
+
 
     <script>
       // Get textArea element by ID
