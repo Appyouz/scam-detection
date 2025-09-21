@@ -3,17 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const textarea = document.getElementById("email-text");
   const form = document.getElementById("phishing-form");
 
-  // // Add a keydown listener to the textarea
-  // textarea.addEventListener("keydown", (event) => {
-  //   // Check if the key pressed is 'Enter' and not 'Shift + Enter'
-  //   if (event.key === "Enter" && !event.shiftKey) {
-  //     event.preventDefault();
-  //
-  //     // Submit the form
-  //     form.submit();
-  //   }
-  // });
-
   const API_URL = "http://localhost:8000";
   const resultContainer = document.querySelector(".result-container");
   const resultText = document.getElementById("result-text");
