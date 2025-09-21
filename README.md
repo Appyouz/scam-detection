@@ -4,7 +4,7 @@ An educational and practical web application for detecting phishing attempts in 
 
 This application is built as a portfolio piece to showcase skills in web development, API integration, and machine learning model deployment.
 
-## ✨ Features
+## Features
 
 - **Frontend**: A user-friendly, single-page interface for pasting email content.
 - **Backend**: A RESTful API built with Django to handle requests.
@@ -12,7 +12,7 @@ This application is built as a portfolio piece to showcase skills in web develop
 - **Machine Learning Integration**: Loads a pre-trained `scikit-learn` model to make real-time predictions.
 - **URL Feature Extraction**: Contains custom logic to parse a URL and extract over 50 numerical features for the model.
 
-## 🚀 Technologies
+## Technologies
 
 * **Backend**: Python, Django
 * **Frontend**: HTML5, CSS3, JavaScript (ES6+)
@@ -20,7 +20,7 @@ This application is built as a portfolio piece to showcase skills in web develop
 * **Environment**: `pip`, Virtual Environments
 * **Version Control**: Git
 
-## 🛠️ Prerequisites
+## Prerequisites
 
 Before you can run the project, ensure you have the following installed:
 
@@ -84,7 +84,7 @@ Follow these steps to get the project up and running on your local machine.
 
     The application will be accessible at `http://127.0.0.1:8000/`.
 
-## 🖥️ Usage
+## Usage
 
 1.  Navigate to `http://127.0.0.1:8000/` in your web browser.
 2.  Paste any email or URL content into the textarea.
