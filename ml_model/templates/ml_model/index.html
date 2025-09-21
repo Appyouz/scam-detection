@@ -10,14 +10,11 @@
 
 <body>
   <div class="container">
-    <!-- <h1>Catch The Phish</h1><br> -->
-    <!-- <p>Enter email content below to check if it's a scam</p> -->
-    <!---->
-    <h1>Catch the Phish! 🎣</h1>
-    <p>Is that email a little... *phishy*? Paste the content below and let's find out! </p>
+    <h1>Welcome to the Scam Detection! </h1>
+    <p>Is that email a little... *phishy* 🎣? Paste the url below and let's find out! </p>
     <form id="phishing-form" method="POST">
       {% csrf_token %}
-      <textarea id="email-text" name="email-text" rows="1" cols="50" placeholder="Paste the email content here..."></textarea>
+      <textarea id="email-text" name="email-text" rows="3" cols="50" placeholder="Paste the email content here..."></textarea>
       <button type="submit">Analyze</button>
       </form>
   </div>
