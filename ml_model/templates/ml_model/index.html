@@ -24,28 +24,13 @@
 
 
   <div class="container hidden result-container">
-      <h1>Result</h1>
+      <h1>Result: </h1>
+      <p id="result-text">Result</p>
   </div>
 
 
 
+  <script src="{% static 'ml_model/script.js' %}"></script>
 
-    <script>
-      // Get textArea element by ID
-      const textarea = document.getElementById('email-text')
-      const form = document.getElementById('phishing-form')
-      
-      // Add a keydown listener to the textarea
-      textarea.addEventListener('keydown', (event) => {
-        // Check if the key pressed is 'Enter' and not 'Shift + Enter'
-        if(event.key === 'Enter' && !event.shiftKey){
-          event.preventDefault();
-
-          // Submit the form
-          form.submit();
-        }
-      });
-    </script>
-</body>
-
+  </body>
 </html>
