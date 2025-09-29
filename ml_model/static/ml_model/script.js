@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const textarea = document.getElementById("email-text");
   const form = document.getElementById("phishing-form");
 
-  const API_URL = "http://localhost:8000";
   const resultContainer = document.querySelector(".result-container");
   const resultText = document.getElementById("result-text");
 
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // FetchAPI
   form.addEventListener("submit", async (event) => {
-    // 1. prevent default form submission  (which reloads the page)
+    // 1. prevent default form submission (which reloads the page)
     event.preventDefault();
 
     // Get email text from the textArea
@@ -23,12 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Do not send any empty request
     if (!emailText) return;
 
+    // --- Added loading state and cleared old classes here ---
+    // Clear previous classes and show loading state
+    resultText.textContent = "Analyzing...";
+    resultText.classList.remove("safe", "malicious");
+    resultContainer.style.display = "block";
+
     // Prepare the  data to be sent to the server
     const formData = {
       email_text: emailText,
     };
 
-    // 2. Use the fetchAPI  to send the form data to backend
+    // 2. Use the fetchAPI to send the form data to backend
     try {
       const response = await fetch("/prediction_api/", {
         method: "POST",
@@ -48,15 +53,22 @@ document.addEventListener("DOMContentLoaded", () => {
       // 4. Parse the received
       const result = data.result;
 
+      // Apply the correct color class based on the prediction ---
+      if (result === "Safe") {
+        resultText.classList.add("safe");
+      } else if (result === "Malicious") {
+        resultText.classList.add("malicious");
+      }
+      // -----------------------------------------------------------------------
+
       // Update the content of result container with the prediction
       resultText.textContent = result;
-      // 5. Update the hidden container
-      resultContainer.style.display = "block";
-      // 6. Display the container by changing its cs
+      // 5. The container is already visible from the pre-fetch step.
     } catch (error) {
-      // Handle any errors that occur during the fetch operation
       console.error("There was a problem with the fetch operation:", error);
       resultText.textContent = "Error: Could not get a result from the server.";
+      // Ensure color classes are removed on error
+      resultText.classList.remove("safe", "malicious");
       resultContainer.style.display = "block";
     }
   });

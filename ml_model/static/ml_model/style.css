@@ -75,3 +75,18 @@ button {
 button:hover {
     background-color: #2980b9;
 }
+
+
+
+#result-text.safe {
+    color: #4CAF50; /* A pleasant green */
+    font-weight: bold;
+    font-size: 2.25rem;
+}
+
+#result-text.malicious {
+    color: #F44336; /* A clear red */
+    font-weight: bold;
+    font-size: 2.25rem;
+}
+
